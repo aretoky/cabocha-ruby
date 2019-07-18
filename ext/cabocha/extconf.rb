@@ -3,7 +3,7 @@ require 'mkmf'
 cabocha_config = with_config('cabocha-config', 'cabocha-config')
 enable_config('cabocha-config')
 
-`cabocha-config --libs-only-l`.chomp.split.select { |s| (s =~ /^-L/) == nil }'.each { | lib |
+`cabocha-config --libs-only-l`.chomp.split.select { |s| (s =~ /^-L/) == nil }.each { | lib |
   p lib
   have_library(lib)
 }
